@@ -1,7 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { ITask } from "./types/iTask";
+import type { RootState } from "./store";
+interface InitialState{
+    tasks: ITask[]
+}
 
-const initialState:ITask[] = [
+const initialState:InitialState ={
+     tasks:[
     {
         id:"gfhrtwsnmchfg",
         title: "Todo app",
@@ -19,9 +24,13 @@ const initialState:ITask[] = [
         priority: "Low"
     }
 ]
+}
 const taskSlice = createSlice({
     name:"Task",
     initialState,
     reducers:{}
 });
+export const taskSelector = (state: RootState)=>{
+    return state.todo.tasks
+}
 export default taskSlice.reducer;
