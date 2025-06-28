@@ -22,6 +22,14 @@ const initialState:InitialState ={
         dueDate: "2025-10",
         isComplete:false,
         priority: "Low"
+    },
+    {
+        id:"gfhrtwsnffmctthfg",
+        title: "Food app",
+        description: "I am creating a food app",
+        dueDate: "2025-10",
+        isComplete:false,
+        priority: "Medium"
     }
 ]
 }
