@@ -24,12 +24,12 @@ export default function Users() {
        */}
       <ul>
         {taskSe.map((task) => (
-          <li key={task.id} className={cn(" bg-red-500 m-10 p-10 text-center ")}>
+          <li  className={cn(" bg-red-500 m-10 p-10 text-center ")}>
             <div
               className={cn("w-10 h-10 rounded-full text-gray-500 bg-yellow-700", {
-                "bg-green-500": task.priority === "Low",
-                "bg-yellow-500": task.priority === "Medium",
-                "bg-orange-500": task.priority === "High",
+                "bg-green-500": task.priority === "low",
+                "bg-yellow-500": task.priority === "medium",
+                "bg-orange-500": task.priority === "high",
               })}
             >saha</div>
             <p>{task.title}</p>
