@@ -35,20 +35,27 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useAppDispatch } from "@/hook/hook";
 import { cn } from "@/lib/utils";
-import { addTask } from "@/redux/tasks";
+import { addTask, type draftTask } from "@/redux/tasks";
+import type { ITask } from "@/redux/types/iTask";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 
 
 // import { format } from "path";
 // import { Label } from "@/components/ui/label";
-import { useForm } from "react-hook-form";
+import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
 
 export function Modal2() {
   const form = useForm();
   const dispatch = useAppDispatch()
-  function onSubmit(data: any) {
-    dispatch(addTask(data))
+  const onSubmit:SubmitHandler<FieldValues> = (data)=> {
+    // const newTask : draftTask = {
+    //   title: data.title,
+    //   description: data.description,
+    //   priority: data.priority,
+    //   dueDate: data.dueDate instanceof Date ? data.dueDate.toISOString() : data.dueDate,
+    // }
+    dispatch(addTask(data as ITask))
     console.log("Data", data);
   }
   return (
